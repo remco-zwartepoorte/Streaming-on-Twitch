@@ -21,7 +21,7 @@ function getChannelInfo() {
 }
 
 function addToList(data) {
-  const channelid = document.getElementById('channels');
+  const channelid = document.getElementById('channellist');
   channelid.innerHTML =
     channelid.innerHTML +
     '<tr>' +
