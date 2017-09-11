@@ -1,0 +1,22 @@
+body {
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+}
+
+.header {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+th,
+td {
+  padding: 5px;
+  text-align: left;
+}
+
+img {
+  border-radius: 25px;
+  height: 40px;
+  margin-right: 5px;
+  width: 40px;
+}
