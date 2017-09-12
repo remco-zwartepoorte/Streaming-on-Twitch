@@ -10,20 +10,27 @@ const channels = [
 
 function getChannelInfo() {
   channels.forEach(function(channel) {
-    function makeURL() {
-      const endpoint = 'https://wind-bow.glitch.me/twitch-api/channels/';
-      return endpoint + channel;
-    }
-    fetch(makeURL())
+    const channelUrl =
+      'https://wind-bow.glitch.me/twitch-api/channels/' + channel;
+    fetch(channelUrl)
       .then(blob => blob.json())
       .then(data => addToList(data));
   });
 }
 
 function addToList(data) {
-  const channelid = document.getElementById('channellist');
-  channelid.innerHTML =
-    channelid.innerHTML +
+  // ** first way of DOM manipulation: create new Text node, create new element node, add text to element node, append to selected element
+  // let newText = document.createTextNode(data.name);
+  // let newTd = document.createElement('td');
+  // let newTr = document.createElement('tr');
+  // newTd.appendChild(newText);
+  // newTr.appendChild(newTd);
+  // document.getElementById('list').appendChild(newTr);
+
+  // ** other way of adding content to the DOM tree: innerHTML
+  const channelList = document.getElementById('list');
+  channelList.innerHTML =
+    channelList.innerHTML +
     '<tr>' +
     '<td>' +
     '<img src="' +
@@ -40,3 +47,4 @@ function addToList(data) {
     '</a></tr>';
 }
 getChannelInfo();
+// const streamUrl = 'https://wind-bow.glitch.me/twitch-api/streams/' + channel;
