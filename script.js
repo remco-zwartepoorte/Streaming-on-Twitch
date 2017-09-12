@@ -29,22 +29,15 @@ function addToList(data) {
 
   // ** other way of adding content to the DOM tree: innerHTML
   const channelList = document.getElementById('list');
-  channelList.innerHTML =
-    channelList.innerHTML +
-    '<tr>' +
-    '<td>' +
-    '<img src="' +
-    data.logo +
-    '" height="75" width="75"</img>' +
-    '<b>' +
-    data.name +
-    '</b></td>' +
-    '<td><a ' +
-    'href=' +
-    data.url +
-    '>' +
-    'offline' +
-    '</a></tr>';
+  channelList.innerHTML += `
+    <tr>
+    <td>
+    <img src="${data.logo}" height="75" width="75"><b>${data.name}</b>
+    </td>
+    <td>
+    <a 'href='${data.url}'> offline</a>
+    </td>
+    </tr>`;
 }
 getChannelInfo();
 // const streamUrl = 'https://wind-bow.glitch.me/twitch-api/streams/' + channel;
