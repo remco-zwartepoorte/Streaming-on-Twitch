@@ -35,7 +35,7 @@ function addToList(data) {
     <img src="${data.logo}" height="75" width="75"><b>${data.name}</b>
     </td>
     <td>
-    <a 'href='${data.url}'> offline</a>
+    <a href='${data.url}'> offline</a>
     </td>
     </tr>`;
 }
